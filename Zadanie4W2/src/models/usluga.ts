@@ -1,5 +1,5 @@
 export interface Usluga {
-    id: number;
+    numer: number;
     nazwa: string;
     wykonawca: string;
     rodzaj: string;

@@ -15,12 +15,12 @@
     </thead>
     <tbody>
         <tr *ngFor="let obiekt of (dane$ | async)">
-            <td>{{obiekt.id}}</td>
+            <td>{{obiekt.numer}}</td>
             <td>{{obiekt.nazwa}}</td>
             <td>{{obiekt.wykonawca}}</td>
             <td>{{obiekt.rodzaj}}</td>
             <td>{{obiekt.rok}}</td>
-            <td><a [routerLink]="obiekt.id + ''">Link</a></td>
+            <td><a [routerLink]="obiekt.numer + ''">Link</a></td>
         </tr>
     </tbody>
 </table>
