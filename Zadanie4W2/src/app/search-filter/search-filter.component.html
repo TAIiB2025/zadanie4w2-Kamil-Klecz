@@ -1,0 +1,19 @@
+<p>search-filter works!</p>
+<div class="search-container">
+    <h3>Wyszukaj osoby</h3>
+    <div class="search-form">
+    <input 
+      type="text" 
+      [(ngModel)]="searchTerm" 
+      placeholder="Wpisz imię do wyszukania..."
+      class="search-input"
+      (keyup.enter)="onFilter()"
+    />
+    <button 
+      (click)="onFilter()" 
+      class="filter-button"
+    >
+      Filtruj
+    </button>
+    </div>
+  </div>

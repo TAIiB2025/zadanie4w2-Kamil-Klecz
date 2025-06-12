@@ -16,6 +16,7 @@ namespace BLL
         public void Delete(int id);
         public void Put(int id, UslugaBody osoba);
         public void post(UslugaBody osoba);
+        IEnumerable<UslugaBody> GetFiltered(string? nazwa);
 
     }
 }

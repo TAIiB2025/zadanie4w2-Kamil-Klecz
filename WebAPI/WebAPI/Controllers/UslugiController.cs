@@ -37,10 +37,44 @@ namespace WebAPI.Controllers
             _osobyService.Put(id, osobaPostDTO);
         }
 
+        //[HttpPost]
+        //public IActionResult Post([FromBody] UslugaBody osobaPostDTO)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+
+        //    _osobyService.post(osobaPostDTO);
+        //    return NoContent();
+        //}
+
+        //[HttpPut("id")]
+        //public IActionResult Put(int id, [FromBody] UslugaBody osobaPostDTO)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+
+        //    _osobyService.Put(id, osobaPostDTO);
+        //    return NoContent();
+        //}
+
+
+
         [HttpDelete("id")]
         public void Delete(int id)
         {
             _osobyService.Delete(id);
         }
+
+
+        [HttpGet("filtr")]
+        public IEnumerable<UslugaBody> GetFiltered([FromQuery] string? nazwa = null)
+        {
+            return _osobyService.GetFiltered(nazwa);
+        }
+
     }
 }

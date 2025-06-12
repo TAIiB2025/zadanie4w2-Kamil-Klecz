@@ -90,5 +90,21 @@ namespace BLL_Memory
             };
             osobyDbSet.Add(osobaEntity);
         }
+
+
+        //Filtrowanie po imieniu
+        public IEnumerable<UslugaBody> GetFiltered(string? nazwa)
+        {
+            var query = osobyDbSet.AsQueryable();
+
+            if (!string.IsNullOrEmpty(nazwa))
+            {
+                query = query.Where(o => !o.nazwa.Contains(nazwa, StringComparison.OrdinalIgnoreCase));
+            }
+
+            return query.Select(os => os.ToUslugaBody());
+        }
+
+
     }
 }
